@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1FABD48-8A3F-467B-967D-69F6FDDE39F0}</ProjectGuid>
+    <ProjectGuid>{66528CBC-09B4-4CA1-8273-9E0C2F2632F3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CustomListProj_actual_KD</RootNamespace>
-    <AssemblyName>CustomListProj_actual_KD</AssemblyName>
+    <RootNamespace>CustomListProj_Tests</RootNamespace>
+    <AssemblyName>CustomListProj_Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
