@@ -10,7 +10,8 @@ namespace CustomListProj_actual_KD
     {
         // member variables
         private T[] array;
-
+        public readonly int count;
+        public int capacity;
 
         // constructor
         public CustomList()
@@ -19,6 +20,9 @@ namespace CustomListProj_actual_KD
         }
 
         // member methods
+        public void Add(T input)
+        {
 
+        }
     }
 }
