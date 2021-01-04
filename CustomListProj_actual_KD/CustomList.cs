@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CustomListProj_actual_KD
 {
-    public class CustomList
+    public class CustomList <T>
     {
         // member variables
-        
+        private T[] array;
 
 
         // constructor
