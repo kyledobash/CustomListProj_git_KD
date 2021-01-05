@@ -12,8 +12,10 @@ namespace CustomListTests
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
+
             int expected = 1;
             int actual;
+
             string testString = "This should add to testList";
 
             // act
@@ -29,13 +31,15 @@ namespace CustomListTests
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
+
             string expected = "This should add to testList";
             string actual;
+
             string testString = "This should add to testList";
 
             // act
             testList.Add(testString);
-            actual = testList.Indexer(0);
+            actual = testList[0];
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -46,8 +50,10 @@ namespace CustomListTests
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
+
             int expected = 3;
             int actual;
+
             string testString1 = "1st test string";
             string testString2 = "2nd test string";
             string testString3 = "3rd test string";
@@ -69,11 +75,12 @@ namespace CustomListTests
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
+
             int expected = 4;
             int actual;
             
             // act
-            actual = testList.capacity;
+            actual = testList[0].capacity;
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -84,8 +91,10 @@ namespace CustomListTests
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
+
             int expected = 8;
             int actual;
+
             string testString1 = "1st test string";
             string testString2 = "2nd test string";
             string testString3 = "3rd test string";
@@ -98,7 +107,55 @@ namespace CustomListTests
             testList.Add(testString3);
             testList.Add(testString4);
             testList.Add(testString5);
-            actual = testList.capacity;
+            actual = testList[4].capacity;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_AddItemToArrayOf1Item_OriginalItemRemainsAtIndex0 ()
+        {
+            // arrange
+            CustomList<string> testList = new CustomList<string>();
+
+            string expected = "1st test string";
+            string actual;
+
+            string testString1 = "1st test string";
+            string testString2 = "2nd test string";
+            
+            // act
+            testList.Add(testString1);
+            testList.Add(testString2);
+            
+            actual = testList[0];
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        public void Add_AddItemToArrayOf4Items_LastItemAtIndex4()
+        {
+            // arrange
+            CustomList<string> testList = new CustomList<string>();
+
+            string expected = "4th test string";
+            string actual;
+
+            string testString1 = "1st test string";
+            string testString2 = "2nd test string";
+            string testString3 = "3rd test string";
+            string testString4 = "4th test string";
+            string testString5 = "5th test string";
+
+            // act
+            testList.Add(testString1);
+            testList.Add(testString2);
+            testList.Add(testString3);
+            testList.Add(testString4);
+            testList.Add(testString5);
+            actual = testList[4];
 
             // assert
             Assert.AreEqual(expected, actual);
