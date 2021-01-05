@@ -10,8 +10,23 @@ namespace CustomListProj_actual_KD
     {
         // member variables
         private T[] array;
-        public readonly int count;
-        public int capacity;
+        private int count;
+        private int capacity;
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
 
         // constructor
         public CustomList()

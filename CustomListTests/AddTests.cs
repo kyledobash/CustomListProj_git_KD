@@ -20,7 +20,7 @@ namespace CustomListTests
 
             // act
             testList.Add(testString);
-            actual = testList.count;
+            actual = testList.Count;
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -62,7 +62,7 @@ namespace CustomListTests
             testList.Add(testString1);
             testList.Add(testString2);
             testList.Add(testString3);
-            actual = testList.count;
+            actual = testList.Count;
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -80,7 +80,7 @@ namespace CustomListTests
             int actual;
             
             // act
-            actual = testList[0].capacity;
+            actual = testList[0].Capacity;
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -107,7 +107,7 @@ namespace CustomListTests
             testList.Add(testString3);
             testList.Add(testString4);
             testList.Add(testString5);
-            actual = testList[4].capacity;
+            actual = testList[4].Capacity;
 
             // assert
             Assert.AreEqual(expected, actual);
