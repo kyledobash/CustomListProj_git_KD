@@ -35,7 +35,7 @@ namespace CustomListTests
 
             // act
             testList.Add(testString);
-            actual = testList[0];
+            actual = testList.Indexer(0);
 
             // assert
             Assert.AreEqual(expected, actual);
