@@ -10,6 +10,13 @@ namespace CustomListProj_actual_KD
     {
         static void Main(string[] args)
         {
+            CustomList<int> test1 = new CustomList<int>();
+            test1.Add(3);
+            test1.Add(3);
+            test1.Add(3);
+            test1.Add(3);
+            test1.Add(3);
+            Console.ReadLine();
         }
     }
 }

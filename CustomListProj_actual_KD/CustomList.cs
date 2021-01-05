@@ -33,19 +33,34 @@ namespace CustomListProj_actual_KD
         {
             count = 0;
             capacity = 4;
+            array = new T[capacity];
         }
 
         // member methods
         public void Add(T input)
         {
-            //if count == capacity
-                //create a new array with double the capacity
-                //fill the array with old values,
-                //fill array w new value
-                //increment count
-            //else
-                //array[count] = input
-                //count++
+            if (count == capacity)
+            {
+                T[] bucketArray = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    bucketArray[i] = array[i];
+                }
+
+                array = new T[capacity * 2];
+                for (int i = 0; i < count; i++)
+                {
+                    array[i] = bucketArray[i];
+                }
+
+                array[count] = input;
+                count++;
+            }
+            else
+            {
+                array[count] = input;
+                count++;
+            }
         }
 
         public void Remove(T input)
@@ -53,9 +68,9 @@ namespace CustomListProj_actual_KD
 
         }
 
-        public T Indexer (int index)
-        {
-
-        }
+        //public T Indexer (int index)
+        //{
+        //
+        //}
     }
 }
