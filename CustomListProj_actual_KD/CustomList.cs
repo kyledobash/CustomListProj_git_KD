@@ -77,7 +77,8 @@ namespace CustomListProj_actual_KD
                 {
                     array[i] = bucketArray[i];
                 }
-
+                
+                capacity *= 2;
                 array[count] = input;
                 count++;
             }
@@ -88,26 +89,18 @@ namespace CustomListProj_actual_KD
             }
         }
 
-        //public void Remove(T input)
-        //{
-        //    //iterate over the array
-        //        //if the current index of the array  matches input
-        //            //remove the current index
+        public void Remove(T input)
+        {
+            T[] bucketArray = new T[capacity];            
+            for (int i = 0; i < count; i++)
+            {
+                if (!array[i].Equals(input))
+                {
+                    bucketArray[i] = array[i];
+                }
+            }
+            array = bucketArray;
+        }
 
-        //    //figure out a way to fill empty indexes after removal
-
-        //    for (int i = 0; i < count; i++)
-        //    {
-        //        if (array[i].Equals(input))
-        //        {
-        //            array[i] = null;
-        //        }
-        //    }
-        //}
-
-        //public T Indexer (int index)
-        //{
-        //
-        //}
     }
 }
