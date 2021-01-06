@@ -8,18 +8,19 @@ namespace CustomListTests
     public class RemoveTests
     {
         [TestMethod]
-        public void Remove_AttemptToRemoveItemNotInList_ListRemainsSame()
+        public void Remove_AttemptToRemoveFromEmptyIndex_ListRemainsSame()
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
 
-            int expected = 0;
+            int expected = 1;
             int actual;
 
-            string testString = "This item is not in the List";
+            string testString = "this string will not be removed";
+            testList.Add(testString);
 
             // act
-            testList.Remove(testString);
+            testList.Remove(testList[1]);
             actual = testList.Count;
 
             // assert
@@ -90,23 +91,23 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Remove_RemoveItemToArrayOf5Items_CapacityHalved()
+        public void Remove_RemoveIndex3InArrayOf5Items_5thTestStringMovesToIndex3()
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
 
-            int expected = 4;
-            int actual;
+            string expected = "5th test string";
+            string actual;
 
             testList.Add("1st test string");
             testList.Add("2nd test string");
             testList.Add("3rd test string");
-            testList.Add("4th test string");
             testList.Add("This string will be Removed");
+            testList.Add("5th test string");
 
             // act
-            testList.Remove(testList[4]);
-            actual = testList.Capacity;
+            testList.Remove(testList[3]);
+            actual = testList[3];
 
             // assert
             Assert.AreEqual(expected, actual);
