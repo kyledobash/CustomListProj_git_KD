@@ -32,10 +32,18 @@ namespace CustomListProj_actual_KD
         {
             get
             {
+                if (i > count - 1 || i < 0)
+                {
+                    throw new IndexOutOfRangeException("The collection only contains " + (count - 1) + " indexes");
+                }
                 return array[i];
             }
             set
             {
+                if (i > count - 1 || i < 0)
+                {
+                    throw new IndexOutOfRangeException("The collection only contains " + (count - 1) + " indexes");
+                }
                 array[i] = value;
             }
         }
