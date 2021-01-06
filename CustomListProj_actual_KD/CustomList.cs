@@ -28,6 +28,18 @@ namespace CustomListProj_actual_KD
             }
         }
 
+        public T this[int i]
+        {
+            get
+            {
+                return array[i];
+            }
+            set
+            {
+                array[i] = value;
+            }
+        }
+
         // constructor
         public CustomList()
         {
@@ -37,6 +49,11 @@ namespace CustomListProj_actual_KD
         }
 
         // member methods
+        public void Indexer()
+        {
+
+        }
+
         public void Add(T input)
         {
             if (count == capacity)
@@ -63,10 +80,22 @@ namespace CustomListProj_actual_KD
             }
         }
 
-        public void Remove(T input)
-        {
+        //public void Remove(T input)
+        //{
+        //    //iterate over the array
+        //        //if the current index of the array  matches input
+        //            //remove the current index
 
-        }
+        //    //figure out a way to fill empty indexes after removal
+
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        if (array[i].Equals(input))
+        //        {
+        //            array[i] = null;
+        //        }
+        //    }
+        //}
 
         //public T Indexer (int index)
         //{
