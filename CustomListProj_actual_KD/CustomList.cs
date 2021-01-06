@@ -100,6 +100,7 @@ namespace CustomListProj_actual_KD
                 }
             }
             array = bucketArray;
+            count--;
         }
 
     }
