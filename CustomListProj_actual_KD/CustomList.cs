@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProj_actual_KD
 {
-    public class CustomList <T>
+    public class CustomList<T>
     {
         // member variables
         private T[] array;
@@ -72,7 +72,7 @@ namespace CustomListProj_actual_KD
                 {
                     array[i] = bucketArray[i];
                 }
-                
+
                 capacity *= 2;
                 array[count] = input;
                 count++;
@@ -125,13 +125,18 @@ namespace CustomListProj_actual_KD
         public override string ToString()
         {
             string result = "";
-            
+
             for (int i = 0; i < count; i++)
             {
                 result += array[i].ToString();
             }
-            
+
             return result;
+        }
+
+        public static CustomList<T> operator +(CustomList<T> list1, CustomList<T> list2)
+        {
+
         }
     }
 }
