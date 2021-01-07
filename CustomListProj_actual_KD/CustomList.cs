@@ -147,8 +147,17 @@ namespace CustomListProj_actual_KD
 
         public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
         {
-            //try using existing Remove method
-
+            for (int i = 0; i < list2.Count; i++)
+            {
+                for (int j = 0; j < list1.Count; j++)
+                {
+                    if (list2[i].Equals(list1[j]))
+                    {
+                        list1.Remove(list1[j]);
+                    }
+                }
+            }
+            return list1;
         }
     }
 }
