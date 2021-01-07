@@ -1,0 +1,54 @@
+﻿							Subtraction - Operator Overload Method
+									for use with List<T>
+
+Definition:	Will remove all occurences of any values in 2nd List given, from the 1st List given.
+			In more simple terms, values present within the list on the right-hand side of the minus(-), will be removed
+			from the list located on the left-hand side of the minus(-).
+
+
+Example:	List<int> list1 = new List<int>() {1,2,3};
+			List<int> list2 = new List<int>() {2,3};			
+
+			list1 = list1 - list2;
+
+			In this instance list1 now only contains {1}, as both values 2 and 3 were removed.
+
+
+Parameters/
+Data types: Objects on either side the Subtraction Operator(-) must both be CustomLists.
+
+
+Syntax:		When implemented, the Overloaded Subtraction Operator must be reassigning the value of an existing list.
+			
+			example: 
+						list1 = list1 - list2;		(is functional)
+
+										however,
+
+						list1 - list2				(will throw error)
+
+
+Return
+Type:		The OverLoaded Subtration Operator will return CustomList<T> (specific to whatever data 
+			types were inside both initial lists.)
+
+
+Further
+Examples:	The OverLoaded Subtration Operator can also be implemented as -= and function properly.
+
+			List<int> list1 = new List<int>() {1,4,4,5};
+			List<int> list2 = new List<int>() {1,4};			
+
+			list1 -= list2;
+
+			list1 now only contains {5}.
+
+
+			The OverLoaded Subtration Operator will also work with CustomLists of strings.
+
+			List<int> list1 = new List<int>() {"hi","hello","how","are","you"};
+			List<int> list2 = new List<int>() {"hi","how","are"};			
+
+			list1 -= list2;
+
+			list1 now only contains {"hello","you"}.
