@@ -136,6 +136,18 @@ namespace CustomListProj_actual_KD
 
         public static CustomList<T> operator +(CustomList<T> list1, CustomList<T> list2)
         {
+            //try using existing Add method
+            for (int i = 0; i < list2.count; i++)
+            {
+                list1.Add(list2[i]);
+            }
+
+            return list1;
+        }
+
+        public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
+        {
+            //try using existing Remove method
 
         }
     }
