@@ -5,14 +5,14 @@ using CustomListProj_actual_KD;
 namespace CustomListTests
 {
     [TestClass]
-    class ToStringTests
+    public class ToStringTests
     {
         [TestMethod]
-        public void ToString_SingleItemArray_ConvertsIntToString ()
+        public void ToString_SingleItemArray_ConvertsIntToString()
         {
             {
                 // arrange
-                CustomList<string> testList = new CustomList<string>();
+                CustomList<int> testList = new CustomList<int>();
 
                 testList.Add(3);
 
@@ -20,7 +20,7 @@ namespace CustomListTests
                 string actual;
 
                 // act           
-                actual = testList.ToString(testList[0]);
+                actual = testList[0].ToString();
 
                 // assert
                 Assert.AreEqual(expected, actual);
@@ -32,16 +32,16 @@ namespace CustomListTests
         {
             {
                 // arrange
-                CustomList<string> testList = new CustomList<string>();
+                CustomList<char> testList = new CustomList<char>();
 
-                char testChar = "k"
+                char testChar = 'k';
                 testList.Add(testChar);
 
                 string expected = "k";
                 string actual;
 
                 // act           
-                actual = testList.ToString(testChar);
+                actual = testList[0].ToString();
 
                 // assert
                 Assert.AreEqual(expected, actual);

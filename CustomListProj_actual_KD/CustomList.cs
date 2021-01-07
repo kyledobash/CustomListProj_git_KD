@@ -57,11 +57,6 @@ namespace CustomListProj_actual_KD
         }
 
         // member methods
-        public void Indexer()
-        {
-
-        }
-
         public void Add(T input)
         {
             if (count == capacity)
@@ -125,6 +120,18 @@ namespace CustomListProj_actual_KD
                 }
             }
             return -1;
+        }
+
+        public override string ToString()
+        {
+            string result = "";
+            
+            for (int i = 0; i < count; i++)
+            {
+                result += array[i].ToString();
+            }
+            
+            return result;
         }
     }
 }
