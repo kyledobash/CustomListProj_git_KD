@@ -89,19 +89,42 @@ namespace CustomListProj_actual_KD
             }
         }
 
-        public void Remove(T input)
+        public bool Remove(T input)
         {
-            T[] bucketArray = new T[capacity];            
-            for (int i = 0; i < count; i++)
+            int position = ContainsAt(input);
+            if (position >= 0)
             {
-                if (!array[i].Equals(input))
+                RemoveAt(position);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void RemoveAt(int index)
+        {
+            for (int i = index; i < count; i++)
+            {
+                if (i < capacity)
                 {
-                    bucketArray[i] = array[i];
+                    array[i] = array[i + 1];
                 }
             }
-            array = bucketArray;
             count--;
         }
 
+        public int ContainsAt(T item)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (array[i].Equals(item))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
     }
 }

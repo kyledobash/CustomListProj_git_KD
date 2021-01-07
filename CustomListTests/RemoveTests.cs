@@ -8,20 +8,18 @@ namespace CustomListTests
     public class RemoveTests
     {
         [TestMethod]
-        public void Remove_AttemptToRemoveFromEmptyIndex_ListRemainsSame()
+        public void Remove_AttemptToRemoveBadValue_ReturnsFalse()
         {
             // arrange
             CustomList<string> testList = new CustomList<string>();
 
-            int expected = 1;
-            int actual;
+            bool expected = false;
+            bool actual;
 
-            string testString = "this string will not be removed";
-            testList.Add(testString);
+            testList.Add("this string will not be removed");
 
-            // act
-            testList.Remove(testList[1]);
-            actual = testList.Count;
+            // act           
+            actual = testList.Remove("hello");
 
             // assert
             Assert.AreEqual(expected, actual);
