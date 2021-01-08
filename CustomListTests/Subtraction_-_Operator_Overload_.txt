@@ -25,11 +25,11 @@ Syntax:		When implemented, the Overloaded Subtraction Operator must be reassigni
 
 										however,
 
-						list1 - list2				(will throw error)
+						list1 - list2;				(will throw error)
 
 
 Return
-Type:		The OverLoaded Subtration Operator will return CustomList<T> (specific to whatever data 
+Type:		The OverLoaded Subtration Operator will return a CustomList<T> (specific to whatever data 
 			types were inside both initial lists.)
 
 

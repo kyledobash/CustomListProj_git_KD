@@ -13,16 +13,15 @@ namespace CustomListTests
             // arrange
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
-            testList1.Add(1);
-            testList1.Add(3);
-            testList2.Add(2);
-            testList2.Add(4);
-
 
             int expected = 4;
             int actual;
             
             // act
+            testList1.Add(1);
+            testList1.Add(3);
+            testList2.Add(2);
+            testList2.Add(4);            
             testList1.Zip(testList2);
             actual = testList1.Count;
 
