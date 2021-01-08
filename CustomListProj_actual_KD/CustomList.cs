@@ -159,5 +159,10 @@ namespace CustomListProj_actual_KD
             }
             return list1;
         }
+
+        public CustomList<T> Zip(CustomList<T> list)
+        {
+            
+        }
     }
 }
