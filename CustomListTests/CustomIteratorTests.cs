@@ -19,8 +19,8 @@ namespace CustomListTests
 
             // act
             testList1.Add(1);
-            testList1.Add(3);
             testList1.Add(2);
+            testList1.Add(3);
             testList1.Add(4);
             
             foreach (int item in testList1)
@@ -35,37 +35,13 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void GetEnumator_AccessesEveryItemTurnsToString_StringsAssertEqual()
-        {
-            // arrange
-            CustomList<string> testList1 = new CustomList<string>();
-            CustomList<string> testList2 = new CustomList<string>();
-
-            string expected = "This is a test ";
-            string actual;
-
-            // act
-            testList1.Add("This");
-            testList1.Add("is");
-            testList1.Add("a");
-            testList1.Add("test ");
-
-            foreach (string item in testList1)
-            {
-                actual = actual + item.ToString() + " ";
-            }
-            // assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
         public void GetEnumator_IterateEmptyString_NumberOfIterationsIs0()
         {
             // arrange
             CustomList<string> testList1 = new CustomList<string>();
 
             int expected = 0;
-            int actual;
+            int actual = 0;
 
             // act
             foreach (string item in testList1)

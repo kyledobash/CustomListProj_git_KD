@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
+
 
 namespace CustomListProj_actual_KD
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         // member variables
         private T[] array;
@@ -192,6 +194,14 @@ namespace CustomListProj_actual_KD
                 }
             }
             return resultList;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return array[i];
+            }
         }
     }
 }
