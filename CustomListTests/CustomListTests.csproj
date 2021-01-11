@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AdditionOperaterTests.cs" />
     <Compile Include="AddTests.cs" />
+    <Compile Include="CustomIteratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveTests.cs" />
     <Compile Include="SubtractionOperatorTests.cs" />
