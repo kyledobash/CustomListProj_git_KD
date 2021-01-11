@@ -176,7 +176,6 @@ namespace CustomListProj_actual_KD
                 longestCount = list.Count;
             }
 
-
             for (int i = 0; i < longestCount; i++)
             {
                 if (i > (count - 1))

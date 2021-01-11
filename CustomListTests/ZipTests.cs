@@ -127,5 +127,32 @@ namespace CustomListTests
             // assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Zip_ZipOneSmallAndOneLargeList_StringsAreEqual()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> testList3 = new CustomList<int>();
+
+            testList1.Add(1);
+            testList2.Add(2);
+            testList2.Add(3);
+            testList2.Add(4);
+            testList2.Add(5);
+            testList2.Add(6);
+            testList2.Add(7);
+
+            string expected = "1234567";
+            string actual;
+
+            // act
+            testList3 = testList1.Zip(testList2);
+            actual = testList3.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
