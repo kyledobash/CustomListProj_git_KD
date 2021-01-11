@@ -160,23 +160,38 @@ namespace CustomListProj_actual_KD
             return list1;
         }
 
-        public void Zip(CustomList<T> list)
+        public CustomList<T> Zip(CustomList<T> list)
         {
             CustomList<T> resultList = new CustomList<T>();
-            //instantiate a result list
 
-            //use a for loop
-            for (int i = 0; i < list.Count; i++)
+            int longestCount;
+            if (Count > list.Count)
             {
-                resultList.Add(array[i]);
-                resultList.Add(list[i]);
+                longestCount = Count;
             }
-            //native list[i] to result list
-            //parameter list[i] to result list                
+            else
+            {
+                longestCount = list.Count;
+            }
 
-            //return the result list
-            array = resultList.array;
-            count = resultList.Count;
+
+            for (int i = 0; i < longestCount; i++)
+            {
+                if (i > (count - 1))
+                {
+                    resultList.Add(list[i]);
+                }
+                else if (i > (list.count - 1))
+                {
+                    resultList.Add(array[i]);
+                }
+                else
+                {
+                    resultList.Add(array[i]);
+                    resultList.Add(list[i]);
+                }
+            }
+            return resultList;
         }
     }
 }
